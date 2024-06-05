@@ -18,17 +18,18 @@
 <section class="card-container">
   {% for car in cars %}
     <div class="card">
-      <div class="card-content">
-        <div class="card-img-container">
-          <img 
-            src="{% static 'images/car.svg' %}" 
-            alt="A car image"
-          >
+      <a href="{% url 'car-detail' car.id %}">
+        <div class="card-content">
+          <div class="card-img-container">
+            <img class="card-image" 
+              src="{% static 'images/car.svg' %}" 
+              alt="A car image"
+            >
+          </div>
+          <h2 class="card-title">{{ car.model }}</h2>
+            <p>A vehicle made in {{ car.year }}</p>
         </div>
-        <h2 class="card-title">{{ car.model }}</h2>
-          <p>A {{ car.year }} {{ car.model }}</p>
-        <p><small>{{ car.description }}</small></p>
-      </div>
+      </a>
     </div>
   {% endfor %}
 </section>

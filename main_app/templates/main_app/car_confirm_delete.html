@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="page-header">
+  <h1>Remove car from garage?</h1>
+</div>
+<h2>Are you remove {{car.model}} from your garage?</h2>
+
+<form action="" method="post" class="form">
+  {% csrf_token %}
+  <a 
+    href="{% url 'car-detail' car.id %}" 
+    class="btn secondary"
+  >
+    Cancel
+  </a>
+  <button type="submit" class="btn danger">Remove {{car.model}}!</button>
+</form>
+
+{% endblock %}

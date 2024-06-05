@@ -36,3 +36,13 @@
   margin: 5px 0;
   font-size: var(--font-reg);
 }
+
+.card-img-container {
+  display: flex;
+  justify-content: center;
+}
+
+.card-image {
+  width: 200px;
+  height: 200px;
+}
